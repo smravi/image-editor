@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "require: ../layouts/browser.json",
+        "require: marko-widgets",
+        "require: jquery",
+        "require: ./widget.js",
+        "./style.less"
+    ]
+}

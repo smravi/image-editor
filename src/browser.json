@@ -1,0 +1,7 @@
+{
+    "dependencies": [
+        "skin-ebay",
+        "require:./index.js",
+        "require: ./style.less"
+    ]
+}

@@ -1,0 +1,70 @@
+{
+    "model": {
+        "extraParams": {}
+    },
+    "options": {
+        "features": [
+            "zoom",
+            "rotateright",
+            "rotateleft",
+            "brightness",
+            "contrast",
+            "reset",
+            "crop"
+        ],
+        "buttonConfig": {
+            "zoom": {
+                "label": "Zoom",
+                "class": "icon-zoom"
+            },
+            "rotateleft": {
+                "label": "Rotate Left",
+                "class": "icon-rotate_left"
+            },
+            "rotateright": {
+                "label": "Rotate Right",
+                "class": "icon-rotate_right"
+            },
+            "brightness": {
+                "label": "Brightness",
+                "class": "icon-brightness"
+            },
+            "contrast": {
+                "label": "Contrast",
+                "class": "icon-contrast"
+            },
+            "reset": {
+                "label": "Reset",
+                "class": "icon-reset"
+            },
+            "crop": {
+                "label": "Crop",
+                "class": "icon-crop"
+            }
+        },
+        "featureConfig": {
+            "crop": {
+                "minValue": [20, 20],
+                "maxValue": [50, 50],
+                "step": [10, 10]
+            },
+            "zoom": {
+                "minValue": 0.2,
+                "maxValue": 2,
+                "step": 0.2
+            },
+            "rotateLeft": -10,
+            "rotateRight": 10,
+            "brightness": {
+                "minValue": -30,
+                "maxValue": 30,
+                "step": 10
+            },
+            "contrast": {
+                "minValue": -30,
+                "maxValue": 30,
+                "step": 10
+            }
+        }
+    }
+}

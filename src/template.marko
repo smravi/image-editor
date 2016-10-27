@@ -1,0 +1,44 @@
+<!-- Button config object and individual button configs -->
+<var name="buttonConfig" value="data.options.buttonConfig"/>
+<var name="btnZoom" value="buttonConfig.zoom"/>
+<var name="btnContrast" value="buttonConfig.contrast"/>
+<var name="btnBright" value="buttonConfig.brightness"/>
+<var name="btnRotateL" value="buttonConfig.rotateleft"/>
+<var name="btnRotateR" value="buttonConfig.rotateright"/>
+<var name="btnReset" value="buttonConfig.reset"/>
+<var name="btnCrop" value="buttonConfig.crop"/>
+
+<!-- featureConfig object and individual featureConfig objects -->
+<var name="featureConfig" value="data.options.featureConfig"/>
+<var name="fBright" value="featureConfig.brightness"/>
+<var name="fContrast" value="featureConfig.contrast"/>
+<var name="fZoom" value="featureConfig.zoom"/>
+
+<!-- Default Button classes -->
+<var name="btnClass" value="'btn btn-small'"/>
+
+<div w-bind c-whitespace="preserve" class="img-editor">
+  <div>
+    <canvas w-id="canvas-container" width="800" height="800" >
+    </canvas>
+    <div id='crop'></div>
+  </div>
+  <div class="feature-footer">
+    <div>
+      <button type="button" class="$btnClass $btnCrop.class" w-onClick="crop" name="crop">$btnCrop.label</button>
+      <button type="button" class="$btnClass $btnReset.class" w-onClick="reset" name="reset">$btnReset.label</button>
+      <button type="button" class="$btnClass $btnRotateL.class" w-onClick="rotateleft" name="rotateLeft">$btnRotateL.label</button>
+      <button type="button" class="$btnClass $btnRotateR.class" w-onClick="rotateright" name="rotateRight">$btnRotateR.label</button>
+    </div>
+    <div>
+      <for each="feature in data.clientSpecificFeatures" status-var="loop">
+        <button type="button" class="$btnClass $btnRotateL.class" w-onClick="${feature}" name="${feature}">${feature}</button>
+      </for>
+    </div>
+    <div>
+      <input type="range" class="$btnZoom.class" min="$fZoom.minValue" max="$fZoom.maxValue" value="1" step="$fZoom.step" w-id="zoom" w-onChange="zoom" name="zoom" />$btnZoom.label
+      <input type="range" class="$btnContrast.class" min="$fContrast.minValue" max="$fContrast.maxValue" value="0" step="$fContrast.step" w-id="contrast" w-onChange="contrast" name="contrast" />$btnContrast.label
+      <input type="range" class="$btnBright.class" min="$fBright.minValue" max="$fBright.maxValue" value="0" step="$fBright.step" w-id="brightness" w-onChange="brightness" name="brightness" />$btnBright.label
+    </div>
+  </div>
+</div>
